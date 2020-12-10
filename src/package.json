@@ -1,0 +1,29 @@
+{
+    "name": "blocklist-js",
+    "version": "1.0.0",
+    "description": "JavaScript Lambda function triggered by an argument input of an IP address from an SNS Topic. Once the function is triggered it will perform a match lookup against the following [source](https://raw.githubusercontent.com/firehol/blocklist-ipsets/master/bi_sip_0_1d.ipset). If match resolves `true` then an S3 bucket with the name of the IP address will be created, along with one object per attempt to connect. Each object will be named with a timestamp of the attempt with geolocational metadata written to it.",
+    "main": "index.ts",
+    "dependencies": {
+        "@types/node": "^14.11.1",
+        "aws-sdk": "^2.756.0",
+        "exports": "0.0.1",
+        "geoip-lite": "^1.4.2",
+        "node-fetch": "^2.6.1",
+        "promise": "^8.1.0",
+        "request": "^2.88.2"
+    },
+    "devDependencies": {},
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/aphexlog/blocklist.git"
+    },
+    "author": "Aaron W. West",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/aphexlog/blocklist/issues"
+    },
+    "homepage": "https://github.com/aphexlog/blocklist#readme"
+}
